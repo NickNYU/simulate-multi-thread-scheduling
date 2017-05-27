@@ -17,7 +17,7 @@
 
 
 ### 2. Analysis the result
-{% codeblock [lang:language] [title] [url] [link text] [start:#] [mark:#,#-#] [linenos:false] %}
+```c
 
 int main() {
  8048460:	55                   	push   ebp
@@ -38,11 +38,11 @@ int main() {
  804848b:	b8 00 00 00 00       	mov    eax,0x0
 }
 
-{% endcodeblock %}
+```
 
 
 > Note: In the code block of 
-{% codeblock [lang:language] [title] [url] [link text] [start:#] [mark:#,#-#] [linenos:false] %}
+```c
 
 	a[3] = (int)fun;
  804847b:	b8 3b 84 04 08       	mov    eax,0x804843b
@@ -53,7 +53,7 @@ int main() {
  8048488:	89 45 04             	mov    DWORD PTR [ebp+0x4],eax
 
 
-{% endcodeblock %}
+```
 
 [ebp + 0x4] will be the return address of main function
 
