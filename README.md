@@ -4,67 +4,23 @@
 
 - gcc -g main.c switch.s -o main -fstack-protector
 
-<<<<<<< 721878c8080d51909e22fe0987c0ab64cd0aaa30
 - objdump -d -M intel -S main
 
 - objdump -d -M intel -S main > main.s
 
 
 ## Introduction
-=======
-## Introduction
-
-### 1. Stack Manipulation of Assembly
-
-- call 指令把它后面的指令地址保存到 esp 指向的内存单元，同修改 eip
-- ret 指令把 esp 指向的内存单元中的值保存到 eip
-- push 指令把值保存到 esp 指向的内存单元
-- pop 把 esp 指向的内存单元的值取出。
-
-> More details found in blog [C语言函数调用栈(一)](http://www.cnblogs.com/clover-toeic/p/3755401.html)
-
-
-### 2. Analysis the result
-```c
-
-int main() {
- 8048460:	55                   	push   ebp
- 8048461:	89 e5                	mov    ebp,esp
- 8048463:	83 ec 10             	sub    esp,0x10
-	int a[3] = {0};
- 8048466:	c7 45 f4 00 00 00 00 	mov    DWORD PTR [ebp-0xc],0x0
- 804846d:	c7 45 f8 00 00 00 00 	mov    DWORD PTR [ebp-0x8],0x0
- 8048474:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [ebp-0x4],0x0
-	a[3] = (int)fun;
- 804847b:	b8 3b 84 04 08       	mov    eax,0x804843b
- 8048480:	89 45 00             	mov    DWORD PTR [ebp+0x0],eax
-	a[4] = (int)fun;
- 8048483:	b8 3b 84 04 08       	mov    eax,0x804843b
- 8048488:	89 45 04             	mov    DWORD PTR [ebp+0x4],eax
-	
-	return 0;
- 804848b:	b8 00 00 00 00       	mov    eax,0x0
-}
-
-```
-
-
-> Note: In the code block of 
-```c
->>>>>>> modify the markdown
 
 ### 1. 上下文切换
 
 所谓的上下文，指是就是当前的寄存器环境(eax, edx, ecx, ebx, esp, ebp, esi, edi, eflags)
 
-<<<<<<< 721878c8080d51909e22fe0987c0ab64cd0aaa30
+
 [Context Switch Definition](http://www.linfo.org/context_switch.html)
 > 摘自上文的定义
 > A context switch (also sometimes referred to as a process switch or a task switch) is the switching of the CPU (central processing unit) from one process or thread to another.
 > A context is the contents of a CPU's registers and program counter at any point in time.
-=======
-```
->>>>>>> modify the markdown
+
 
 
 ### 2. 保存寄存器环境
