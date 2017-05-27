@@ -17,7 +17,7 @@
 
 
 ### 2. Analysis the result
-{% codeblock [lang:c] [main] [start:#] [mark:#,#-#] [linenos:false] %}
+{% codeblock [lang:language] [title] [url] [link text] [start:#] [mark:#,#-#] [linenos:false] %}
 
 int main() {
  8048460:	55                   	push   ebp
@@ -42,7 +42,7 @@ int main() {
 
 
 > Note: In the code block of 
-{% codeblock [lang:c] [main] [start:#] [mark:#,#-#] [linenos:false] %}
+{% codeblock [lang:language] [title] [url] [link text] [start:#] [mark:#,#-#] [linenos:false] %}
 
 	a[3] = (int)fun;
  804847b:	b8 3b 84 04 08       	mov    eax,0x804843b
